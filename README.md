@@ -8,8 +8,8 @@ Installation Procedures:
 
 4. Go to :
 
-	`http://192.168.9.90`  for `elkstack`
-	`http://192.168.9.91`  for `application server`
+	`http://172.28.128.30`  for `elkstack`
+	`http://172.28.128.31`  for `application server`
 
 5. add in `/etc/hosts` file these line to set elkstack as hostname for local use
 	
