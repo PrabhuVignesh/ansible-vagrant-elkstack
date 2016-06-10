@@ -1,6 +1,6 @@
 Installation Procedures:
 
-1. clone or download this repo and `cd` to gitlab folder.
+1. clone or download this repo and `cd` to `ansible-vagrant-elkstack` folder.
 
 2. Install the necessary Ansible roles by running : `ansible-galaxy install -r requirements.yml`.
 
