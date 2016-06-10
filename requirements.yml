@@ -1,0 +1,8 @@
+---
+- src: bastly.java
+- src: bastly.nginx
+- src: bastly.elasticsearch
+- src: bastly.elasticsearch-curator
+- src: bastly.kibana
+- src: bastly.logstash
+- src: bastly.logstash-forwarder

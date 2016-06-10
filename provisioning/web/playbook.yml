@@ -1,0 +1,32 @@
+---
+
+- hosts: app
+  gather_facts: yes
+
+  vars_files:
+    - vars/main.yml
+
+  pre_tasks:
+    - name: Update apt cache if needed.
+      apt: update_cache=yes cache_valid_time=86400
+
+  roles:
+    - bastly.nginx
+    - bastly.logstash-forwarder
+
+  tasks:
+    - name: setting sample web server.
+      copy:
+        src: files/example.conf
+        dest: /etc/nginx/sites-enabled/example.conf
+        owner: root
+        group: root
+        mode: 0644
+      notify: restart nginx
+
+    - name: Ensure elkstack server is there in hosts file.
+      lineinfile:
+        dest: /etc/hosts
+        regexp: '.*elkstack$'
+        line: "172.28.128.30 elkstack"
+        state: present
